@@ -24,8 +24,8 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": "󰈈 ",
+      "deactivated": "󰈉 "
     }
   },
   "tray": {
@@ -45,16 +45,16 @@
     "on-click-middle": "close"
   },
   "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
+    "format": "{usage}% 󰻠"
+    // "tooltip": false
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}% 󰍛"
   },
   "bluetooth": {
     "format": " {status}",
-    "format-disabled": "",
-    "format-off": "",
+    // "format-disabled": "",
+    // "format-off": "",
     "interval": 30,
     "on-click": "rofi-bluetooth &"
   },
@@ -67,7 +67,6 @@
   //   "format-icons": ["", "", ""]
   // },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "format-icons": [
       "",
@@ -114,8 +113,8 @@
     // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+    "format-muted": "󰝟 {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
@@ -135,7 +134,7 @@
   },
   "custom/powerOption": {
     "on-click": "wlogout",
-    "format": "󰢚 ",
+    "format": "󰍜 ",
     "interval": "once",
     "tooltip": false
   },
