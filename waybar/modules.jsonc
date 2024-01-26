@@ -53,9 +53,8 @@
   },
   "bluetooth": {
     "format": " {status}",
-    // "format-disabled": "",
-    // "format-off": "",
-    "interval": 30,
+    "format-disabled": "",
+    "format-off": "",
     "on-click": "rofi-bluetooth &"
   },
   // "temperature": {
