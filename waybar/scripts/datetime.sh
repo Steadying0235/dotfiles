@@ -1,1 +1,1 @@
-echo "$(date '+%A,  %d/%m/%y  %r') "
+echo "$(date '+%A,  %m/%d/%y  %r') "
