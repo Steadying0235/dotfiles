@@ -151,20 +151,32 @@ window#waybar.hidden {
 }
 
 #idle_inhibitor {
-    margin-top: 6px;
-    margin-left: 8px;
-    padding-left: 10px;
-    margin-bottom: 0px;
-    padding-right: 10px;
-    border-radius: 10px;
-    transition: none;
-    background: #C9CBFF;
-    color: #161320;
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	margin-bottom: 0px;
+	padding-right: 10px;
+	border-radius: 10px;
+	transition: none;
+	background: #C9CBFF;
+	color: #161320;
 }
 
 #idle_inhibitor.activated {
-    background: #ecf0f1;
-    color: #161320;
+	background-color: #ecf0f1;
+	color: #2d3436;
+}
+
+#custom-powerOption {
+	font-size: 24px;
+	margin-top: 6px;
+	margin-left: 8px;
+	padding-left: 10px;
+	padding-right: 0px;
+	border-radius: 10px;
+	transition: none;
+	background: #DDB6F2;
+	color: #161320;
 }
 
 #memory {
@@ -224,8 +236,8 @@ window#waybar.hidden {
 	padding-right: 5px;
 	border-radius: 10px;
 	transition: none;
-    color: #89DCEB;
-    background: #161320;
+	color: #89DCEB;
+	background: #161320;
 }
 
 #custom-power {
