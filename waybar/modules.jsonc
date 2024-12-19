@@ -1,6 +1,8 @@
 {
   // Modules configuration
   "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
@@ -28,14 +30,11 @@
       "deactivated": "󰈉 "
     }
   },
+
   "tray": {
     "spacing": 10
   },
-  "clock": {
-    "timezone": "America/Chicago",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
-  },
+
   // Taskbar
   "wlr/taskbar": {
     "format": "{icon}",
@@ -44,27 +43,24 @@
     "on-click": "activate",
     "on-click-middle": "close"
   },
+
   "cpu": {
-    "format": "{usage}% 󰻠"
-    // "tooltip": false
+    "interval": 15,
+    "format": " {}%",
+    "max-length": 10
   },
+
   "memory": {
-    "format": "{}% 󰍛"
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 10
   },
+
   "bluetooth": {
     "format": " {status}",
-    "format-disabled": "",
-    "format-off": "",
     "on-click": "rofi-bluetooth &"
   },
-  // "temperature": {
-  //   // "thermal-zone": 2,
-  //   // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-  //   "critical-threshold": 80,
-  //   // "format-critical": "{temperatureC}°C {icon}",
-  //   "format": "{temperatureC}°C {icon}",
-  //   "format-icons": ["", "", ""]
-  // },
+
   "backlight": {
     "format": "{percent}% {icon}",
     "format-icons": [
@@ -79,18 +75,17 @@
       ""
     ]
   },
+
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 80,
       "warning": 30,
-      "critical": 15
+      "critical": 20 
     },
     "format": "{capacity}% {icon}",
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": [
       " ",
       " ",
@@ -99,15 +94,17 @@
       " "
     ]
   },
+
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
+    //"interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "",
+    "format-ethernet": "",
+    "tooltip-format": "{essid} ({signalStrength}%)",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-disconnected": "⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
+
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon} {format_source}",
@@ -131,21 +128,25 @@
     },
     "on-click": "pavucontrol"
   },
+
   "custom/powerOption": {
     "on-click": "wlogout",
     "format": "󰍜 ",
     "interval": "once",
     "tooltip": false
   },
-  "custom/rmenu": {
+
+  "custom/launcher": {
     "format": " ",
-    "interval": "once",
-    "tooltip": false
+    "on-click": "rofi -show drun",
+    "on-click-right": "killall rofi"
   },
-  "custom/clock": {
-    "interval": 1,
-    "return-type": "string",
-    "exec": "~/.config/waybar/scripts/datetime.sh",
-    "tooltip": false
+
+  "clock": {
+    "interval": 60,
+    "tooltip": true,
+    "format": "{:%I:%M}",
+    "tooltip-format": "{:%Y-%m-%d}"
   }
+
 }
